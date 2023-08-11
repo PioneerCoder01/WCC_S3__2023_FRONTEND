@@ -176,6 +176,13 @@
         flex-direction: column;
     }
 
+    #skills-ui{
+        width: 90%;
+    }
+    .contact form >div:nth-child(1){
+        flex-direction: column;
+    }
+
     #skills > .left {
         flex: 1;
         width: 100%;
@@ -207,6 +214,9 @@
     }
         #about {
             padding-top: 3.5rem;
+        }
+        #skills-ui{
+            width: 100%;
         }
 }
 

@@ -87,6 +87,9 @@ img{
 .bottomDef{
     transform: translateY(30px);
 }
+.scaleDef{
+    transform: scale(0);
+}
 
 
 .observe-2 {
@@ -104,6 +107,11 @@ img{
 [class*="show-"] {
     opacity: 1;
     transform: translate(0, 0);
+}
+
+.show-scale-null{
+    transform:scale(1);
+
 }
 
 
@@ -696,6 +704,10 @@ header .menu .settings #en{
     opacity: 1 !important;
 }
 
+#works .work {
+    overflow: hidden;
+}
+
 #works .work .image{
    padding: 0.6rem;
    background: var(--grey);
@@ -706,10 +718,10 @@ header .menu .settings #en{
 #works .work .image::before{
     position: absolute;
     content: "";
-    top: -10.6px;
-    right: -10.6px;
-    width: 1.1rem;
-    height: 1.1rem;
+    top: -22.6px;
+    right: -22.6px;
+    width: 2rem;
+    height: 2rem;
     background: var(--bg-principal);
     transform: rotate(45deg);
     border-bottom: 3px solid white;
@@ -750,23 +762,47 @@ header .menu .settings #en{
     background: var(--dark-c);
     height: 2.3rem;
     color: var(--white-color);
+    padding: 0.8rem;
+    
 }
 
-#works .work .cta button{
+#works .work .cta a{
     flex: 1;
+    height: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#works .work .cta a button{
     background: transparent;
     border: 1px solid var(--white-color);
     height: 100%;
+    width: 100%;
     font-size: 1rem;
     color: var(--white-color);
     cursor: pointer;
+    position: relative;  
+
+}
+
+#works .work .cta button::before{
+    position: absolute;
+    content:"";
+    height: 1.5rem;
+    width: 1.5rem;
+    top: -18px;
+    right: -18px;
+    background: var(--dark-c);
+    border: 1px solid var(--white-color);
+    transform: rotate(45deg);
+    z-index: 10;
 }
 
 #works .work .cta .comments{
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 0.7rem;
 }
 
@@ -779,7 +815,7 @@ header .menu .settings #en{
 }
 
 #works .work .cta .comments img{
-    width: 1.3rem;
+    width: 1.5rem;
     cursor: pointer;
 }
 
@@ -811,17 +847,38 @@ header .menu .settings #en{
 .contact{
     width: 100%;
 }
+.contact form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
 
-.contact .sendMail{
+.contact form >div:nth-child(1){
+    display: flex;
+    gap: 1rem; 
+    width: 100%;
+}
+
+.contact form >div:nth-child(1) div{
+    display: flex;
+    flex: 1;
+    background: var(--white-color);
+    align-items: center;
+    padding: 0.9rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact form >div:nth-child(2){
     background: var(--white-color);
     display: flex;
     align-items: center;
-    margin-bottom: 3rem;
     padding: 0.9rem 2rem;
     position: relative;
+    overflow: hidden;
 }
 
-.contact .sendMail::before{
+.contact .sendMail::before,.contact form >div:nth-child(1) div::before{
     position: absolute;
     content: "";
     width: 1.5rem;
@@ -832,7 +889,7 @@ header .menu .settings #en{
     transform: rotate(45deg);
 }
 
-.contact .sendMail::after{
+.contact .sendMail::after,.contact form >div:nth-child(1) div::after{
     position: absolute;
     content: "";
     width: 1.5rem;
@@ -946,7 +1003,7 @@ footer h1{
     color: var(--white-color);
 }
 
-footer h1 span{
+footer h1 .span{
     color: var(--brighter-blue);
 }
 
@@ -1094,5 +1151,76 @@ footer h1 span{
 @keyframes logo {
     to {
         transform: translateY(-7px);
+    }
+}
+
+
+/* section ui design */
+
+
+#skills-ui{
+    width: 70%;
+    margin: auto auto 3rem auto;
+}
+
+#skills-ui .svg-container{
+    width: 100%;
+}
+
+
+
+
+
+/* tracer */
+
+#skills-ui .show-scale-null #Tracé_15,#skills-ui .show-scale-null #Tracé_14{
+    stroke-dasharray: 250;
+    animation: trace1 2s linear forwards reverse;
+}
+
+@keyframes trace1 {
+    to{
+        stroke-dashoffset: 250;
+    }
+}
+
+#skills-ui .show-scale-null #Tracé_16,#skills-ui .show-scale-null #Tracé_17{
+    stroke-dasharray: 450;
+    animation: trace2 2s linear forwards reverse;
+}
+
+@keyframes trace2 {
+    to{
+        stroke-dashoffset: 450;
+    }
+}
+
+.show-scale-null #XD,.show-scale-null #FIGMA,.show-scale-null #AI,.show-scale-null #PS{
+    opacity: 0;
+    animation: show .5s linear 2s forwards;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+@keyframes show {
+    to{
+        opacity: 1;
+    }
+}
+
+ .show-from-right #Tracé_18,
+ .show-from-right #Tracé_19,
+ .show-from-right #Tracé_20,
+ .show-from-right #Tracé_21,
+ .show-from-right #Tracé_22,
+ .show-from-right #Tracé_23,
+ .show-from-right #Tracé_24,
+ .show-from-right #Tracé_25{
+    stroke-dasharray: 500;
+    animation: skills 2s linear forwards reverse;
+}
+
+@keyframes skills {
+    to{
+        stroke-dashoffset: 500;
     }
 }
