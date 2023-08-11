@@ -7,6 +7,11 @@
     src: url("./assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
 }
 
+@font-face {
+    font-family: "Michroma";
+    src: url("./assets/fonts/Michroma/Michroma-Regular.ttf");
+}
+
 :root{
     --bg-principal: #121a25;
     --white-color: #ffffff;
